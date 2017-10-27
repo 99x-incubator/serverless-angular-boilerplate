@@ -1,3 +1,5 @@
+'use strict';
+
 const AWS = require('aws-sdk');
 const Winston = require('winston');
 

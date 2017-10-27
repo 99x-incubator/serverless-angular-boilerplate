@@ -1,6 +1,9 @@
 'use strict';
+const Dynamo = require('../shared-modules/dynamodb-helper.js');
 
 module.exports.listItems = (event, context, callback) => {
+
+    let dynamo = Dynamo.getDocClient();
     const response = {
         statusCode: 200,
         body: JSON.stringify({

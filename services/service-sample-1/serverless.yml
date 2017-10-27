@@ -29,10 +29,17 @@ custom:
   dynamodb:
     start:
       noStart: true
+    seed:
+      default:
+        sources:
+          - table: Items
+            sources: [./dynamodb/seeds/items.json]
 
 provider:
   name: aws
   runtime: nodejs6.10
+  region: us-east-1
+  stage:  v1
 
 # you can overwrite defaults here
 #  stage: dev
@@ -123,3 +130,10 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+resources:
+  Resources:
+    Items: ${file(./dynamodb/tables/items.yml)}
+
+package:
+  exclude:
+    - dynamodb/**
