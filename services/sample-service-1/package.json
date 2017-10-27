@@ -1,0 +1,11 @@
+{
+    "name": "service-template",
+    "version": "1.0.0",
+    "description": "Service Template",
+    "main": "handler.js",
+    "scripts": {
+        "test": "sls invoke -f hello -l"
+    },
+    "author": "",
+    "license": "ISC"
+}
