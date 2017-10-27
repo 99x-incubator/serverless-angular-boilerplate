@@ -4,7 +4,14 @@ const Dynamo = require('../shared-modules/dynamodb-helper.js');
 module.exports.listItems = (event, context, callback) => {
 
     Dynamo.init();
-    let dynamo = Dynamo.getDocClient();
+    let dynamo = Dynamo.getCoreClient();
+
+    dynamo.listTables(function(err, data) {
+
+            console.log(JSON.stringify(data, null, '  '));
+
+            });
+    
     const response = {
         statusCode: 200,
         body: JSON.stringify({

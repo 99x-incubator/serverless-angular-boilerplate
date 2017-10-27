@@ -36,6 +36,8 @@ exports.init = function() {
         try {
             dynamodb = new AWS.DynamoDB(this.options);
 
+            
+
         } catch (error) {
             Winston.error("Unable to return dynamodb core client. Error:", JSON.stringify(error, null, 2));
             throw error;
