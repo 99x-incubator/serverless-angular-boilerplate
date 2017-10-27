@@ -1,11 +1,11 @@
 {
     "/v1/sample-service-1/*": {
-        "target": "http://localhost:5001",
+        "target": "http://localhost:4200",
         "secure": false,
         "logLevel": "debug"
     },
     "/v1/sample-service-2/*": {
-        "target": "http://localhost:5001",
+        "target": "http://localhost:4200",
         "secure": false,
         "logLevel": "debug"
     }
