@@ -3,10 +3,8 @@
 const AWS = require('aws-sdk');
 const Winston = require('winston');
 
-export default class Dynamo {
-
-    constructor(options) {
-        if (process.env.IS_OFFLINE) {
+exports.init = function() { 
+     if (process.env.IS_OFFLINE) {
             this.options = {
                 region: 'localhost',
                 endpoint: 'http://localhost:8000',
@@ -20,9 +18,9 @@ export default class Dynamo {
         } else {
             this.options = options;
         }
-    }
+ };
 
-    getDocClient() {
+  exports.getDocClient = function() {
         let dynamodb;
         try {
             dynamodb = new AWS.DynamoDB.DocumentClient(this.options);
@@ -33,7 +31,7 @@ export default class Dynamo {
         return dynamodb;
     }
 
-    getCoreClient() {
+    exports.getCoreClient = function() {
         let dynamodb;
         try {
             dynamodb = new AWS.DynamoDB(this.options);
@@ -45,4 +43,3 @@ export default class Dynamo {
         return dynamodb;
     }
 
-}

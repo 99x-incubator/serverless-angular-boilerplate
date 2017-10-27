@@ -1,4 +1,1 @@
-# Angular 4 Web application
-
-## Important Steps
- - Always start the angular server
+# This web application uses sample micro services (sample )
