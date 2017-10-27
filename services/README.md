@@ -2,8 +2,11 @@
 
 ## Creating a New Service
 
-- Copy the service-template and rename as a service e.g sample-service-1
-- Go inside the copied directory (e.g cd sample-service-1) Run `npm install`
+- Copy one of the services as a template and rename as a service e.g sample-service-x
+- Go inside the copied directory (e.g cd sample-service-x) Run `npm install`
+- To start the offline server run `npm start`
 
-### Advance Topics (Steps to create the service-template)
-- Create an empty serverless service by using `sls create --template aws-nodejs --path sample-service-1`
+## Creating a New Service from scratch
+- Create an empty serverless service by using `serverless create --template aws-nodejs --path sample-service-1`
+- Install Winston NPM for application logging `npm install winston`
+- Install Config NPM for application configurations `npm install config`

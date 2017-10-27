@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: service-template
+service: service-sample-1
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -23,7 +23,7 @@ plugins:
 
 custom:
   serverless-offline:
-    port: 5002
+    port: 5001
     prefix: v1
 
 provider:
@@ -64,12 +64,12 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  test:
+    handler: handler.test
     events:
       - http:
           method: get
-          path: sample-service-1/list
+          path: service-sample-1/test
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
