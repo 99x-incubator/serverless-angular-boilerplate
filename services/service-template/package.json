@@ -11,5 +11,8 @@
     "dependencies": {
         "config": "^1.27.0",
         "winston": "^2.4.0"
+    },
+    "devDependencies": {
+        "serverless-offline": "^3.16.0"
     }
 }
