@@ -65,7 +65,7 @@ provider:
 
 functions:
   test:
-    handler: handler.test
+    handler: sample-test/handler.test
     events:
       - http:
           method: get
