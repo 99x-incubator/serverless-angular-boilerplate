@@ -20,11 +20,15 @@ service: service-sample-1
 # Add the serverless plugins here
 plugins:
  - serverless-offline
+ - serverless-dynamodb-local
 
 custom:
   serverless-offline:
     port: 5001
     prefix: v1
+  dynamodb:
+    start:
+      noStart: true
 
 provider:
   name: aws
@@ -64,13 +68,18 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  test:
-    handler: sample-test/handler.test
+  testResponse:
+    handler: sample-test-response/handler.test
     events:
       - http:
           method: get
           path: service-sample-1/test
-
+  listItems:
+    handler: sample-dynamodb/handler.listItems
+    events:
+      - http:
+          method: get
+          path: service-sample-1/listItems
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
