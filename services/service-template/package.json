@@ -7,5 +7,9 @@
         "test": "sls invoke -f hello -l"
     },
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "config": "^1.27.0",
+        "winston": "^2.4.0"
+    }
 }
