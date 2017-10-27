@@ -13,6 +13,7 @@
         "winston": "^2.4.0"
     },
     "devDependencies": {
+        "aws-sdk": "^2.141.0",
         "serverless-dynamodb-local": "^0.2.26",
         "serverless-offline": "^3.16.0"
     }
