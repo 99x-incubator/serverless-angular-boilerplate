@@ -7,15 +7,38 @@ module.exports.listItems = (event, context, callback) => {
     let dynamo = Dynamo.getCoreClient();
 
     dynamo.listTables(function(err, data) {
+        console.log(JSON.stringify(data, null, '  '));
+    });
+        
+    var docClient = Dynamo.getDocClient();
 
-            console.log(JSON.stringify(data, null, '  '));
+    var params = {
+    ExpressionAttributeValues: {
+    ":itemId": {
+        S: "aa84fb90-12c4-11e1-840d-7b32c5ee775a"
+        }
+    }, 
+    KeyConditionExpression: "itemId = :itemId", 
+    TableName: "Items"
+    };
 
+    docClient.query(params, function(err, data) {
+        if (err) {
+            dataObj = err;
+            console.log("Unable to query. Error:", JSON.stringify(err, null, 2));
+        } else {
+            dataObj = 'Query succeeded';
+            console.log("Query succeeded 1");
+            data.Items.forEach(function(item) {
+                console.log(item);
             });
-    
+        }
+    });
+
     const response = {
         statusCode: 200,
         body: JSON.stringify({
-            message: 'Go Serverless v1.0! Your function executed successfully!',
+            message: 'Go Serverless v1.0! Your function executed successfully!' + dataObj ,
             input: event,
         }),
     };
