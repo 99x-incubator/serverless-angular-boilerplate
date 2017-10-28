@@ -1,11 +1,11 @@
 [{
     "itemId": "aa84fb90-12c4-11e1-840d-7b32c5ee775a",
-    "name": "item 1",
+    "itemname": "item 1",
     "createdAt": 1508309471132,
     "updatedAt": 1508309471156
 }, {
-    "itemId": "bn84fb90-12c4-11e1-840d-7b11c5ee775a",
-    "name": "item 2",
+    "itemId": "bn84fb90-12c4-11e1-840d-7b11c5ee775b",
+    "itemname": "item 2",
     "createdAt": 1508309471113,
     "updatedAt": 1508309471164
 }]

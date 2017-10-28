@@ -29,6 +29,9 @@ custom:
   dynamodb:
     start:
       noStart: false
+      inMemory: true
+      migrate: true
+      seed: true
     seed:
       default:
         sources:
