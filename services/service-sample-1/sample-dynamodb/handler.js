@@ -12,22 +12,14 @@ module.exports.listItems = (event, context, callback) => {
         
     var docClient = Dynamo.getDocClient();
 
-    var params = {
-    ExpressionAttributeValues: {
-    ":itemId": {
-        S: "aa84fb90-12c4-11e1-840d-7b32c5ee775a"
-        }
-    }, 
-    KeyConditionExpression: "itemId = :itemId", 
-    TableName: "Items"
-    };
+
 
     docClient.query(params, function(err, data) {
         if (err) {
             dataObj = err;
             console.log("Unable to query. Error:", JSON.stringify(err, null, 2));
         } else {
-            dataObj = 'Query succeeded';
+            //dataObj = 'Query succeeded';
             console.log("Query succeeded 1");
             data.Items.forEach(function(item) {
                 console.log(item);
@@ -38,7 +30,7 @@ module.exports.listItems = (event, context, callback) => {
     const response = {
         statusCode: 200,
         body: JSON.stringify({
-            message: 'Go Serverless v1.0! Your function executed successfully!' + dataObj ,
+            message: 'Go Serverless v1.0! Your function executed successfully!'  ,
             input: event,
         }),
     };
