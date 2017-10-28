@@ -28,7 +28,7 @@ custom:
     prefix: v1
   dynamodb:
     start:
-      noStart: true
+      noStart: false
     seed:
       default:
         sources:
