@@ -12,6 +12,7 @@ module.exports.listItems = (event, context, callback) => {
         
     var docClient = Dynamo.getDocClient();
 
+   // setting conditions for the query
     var params = {
         TableName : 'Items',
         KeyConditionExpression : 'itemId = :itemId',
@@ -20,6 +21,7 @@ module.exports.listItems = (event, context, callback) => {
         }
     };
 
+    //execute the query 
     docClient.query(params, function(err, data) {
         if (err) {
             dataObj = err;
@@ -29,8 +31,7 @@ module.exports.listItems = (event, context, callback) => {
             console.log("Query succeeded 1");
             console.log(data.Items);
             data.Items.forEach(function(item) {
-                console.log("Query succeeded 1");
-                console.log(item);
+                 console.log(item);
             });
         }
     });
